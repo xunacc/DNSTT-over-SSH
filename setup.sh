@@ -72,3 +72,16 @@ go build
 #restart the service and run it
 systemctl enable dnstt
 systemctl restart dnstt
+
+#echo the public key and ns
+clear
+publickey=$(cat /root/dnstt/dnstt-server/server.pub)
+echo "======================"
+echo "Public Key = $publickey"
+echo "Nameserver = $ns"
+echo "======================"
+echo "Login Credentials"
+echo "Username:aku"
+echo "Password:aku"
+
+
