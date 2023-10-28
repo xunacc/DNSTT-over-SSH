@@ -2,6 +2,19 @@
 apt install git -y 
 apt install golang -y
 apt install sed -y  
+#check if ubuntu
+if [ -f /etc/lsb-release ]; then
+    DISTRO=$(grep "DISTRIB_ID" /etc/lsb-release | cut -d'=' -f2)
+    if [[ "$DISTRO" == "Ubuntu" ]]; then
+        clear
+        echo "This OS is Ubuntu."
+        sudo sed -i 's/#DNS=/DNS=8.8.8.8/' /etc/systemd/resolved.conf
+        sudo sed -i 's/#DNSStubListener=yes/DNSStubListener=no/' /etc/systemd/resolved.conf
+        sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
+
+else
+    echo "Unable to determine the operating system."
+fi
 
 #installation
 clear
@@ -83,5 +96,7 @@ echo "======================"
 echo "Login Credentials"
 echo "Username:aku"
 echo "Password:aku"
-
+echo "The system will reboot now..."
+sleep 5
+reboot
 
