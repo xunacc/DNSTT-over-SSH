@@ -11,10 +11,11 @@ if [ -f /etc/lsb-release ]; then
         sudo sed -i 's/#DNS=/DNS=8.8.8.8/' /etc/systemd/resolved.conf
         sudo sed -i 's/#DNSStubListener=yes/DNSStubListener=no/' /etc/systemd/resolved.conf
         sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
-
-else
-    echo "Unable to determine the operating system."
+    else
+        echo "Unable to determine the operating system."
+    fi
 fi
+
 
 #installation
 clear
