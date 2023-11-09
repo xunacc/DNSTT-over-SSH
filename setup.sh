@@ -68,14 +68,6 @@ go build
 #generate pub key and privkey
 ./dnstt-server -gen-key -privkey-file server.key -pubkey-file server.pub
 
-cat <<\EOM > /root/dnstt/dnstt-server/server.key
-e0518afec33e79e1c9fb7f10906a1b2198146947aa1f78861d8c971fde9bde3
-EOM
-
-cat <<\EOM > /root/dnstt/dnstt-server/server.pub
-4a3583ca915e35e9c4f64800624a5e46a1400462b9a1cd11068aedc4c7e4c14b
-EOM
-
 #generate service file for dnstt
    echo "
    [Unit]
