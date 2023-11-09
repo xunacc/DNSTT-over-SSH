@@ -30,8 +30,8 @@ sudo sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/' /etc/ssh/sshd_co
 systemctl restart ssh
 
 #adding user 
-useradd aku -M -s /bin/false
-echo "aku:aku" | chpasswd
+useradd test -M -s /bin/false
+echo "test:1234" | chpasswd
 #install udpgw
 echo "Installing UDPGW and service of udpgw.service"
    #!/bin/sh
@@ -103,8 +103,8 @@ echo "Public Key = $publickey"
 echo "Nameserver = $nameserver"
 echo "======================"
 echo "Login Credentials"
-echo "Username:aku"
-echo "Password:aku"
+echo "Username:test"
+echo "Password:1234"
 echo "The system will reboot now..."
 sleep 5
 reboot
